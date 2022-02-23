@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -20,6 +21,7 @@ public class CardOrderTest {
 
     @BeforeAll
     public static void setUpAll() {
+        WebDriverManager.chromedriver().setup();
         System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
     }
 
@@ -41,6 +43,7 @@ public class CardOrderTest {
 
     @Test
     void shouldSubmitRequest() {
+
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[type='text']")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+79001231231");
