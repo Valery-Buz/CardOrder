@@ -28,7 +28,7 @@ public class CardOrderTest {
 
     @BeforeEach
     public void setUp() {
-        driver = new ChromeDriver();
+        //driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
